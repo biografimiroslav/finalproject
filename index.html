@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My final project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-tex">Привіт! <br>
+                                Ви потрапили на сайт інтерактивних ігор та завдань
+                                <br>Надіємось, що вам сподобається і ви отримаєте позитивні емоції!<br>
+                                Бажаємо Вам гарно провести час!
+            </h3>
+
+            <input id="inpUser" type="text">
+            <button id="submitName" onclick="saveUser()" type="submit">Зберегти</button>
+
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <object width="40px" data="./img/icons/logo.svg" type=""></object>
+                <ul class="logo-tex">
+                    <li>
+                        <p class="logo-text">Coding</p>
+                    </li>
+                    <li>
+                        <p class="logo-text-down">Magic</p>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <ul class="menu-list">
+                    <li class="menu-item"><a class="menu-a" href="">Інтерактив</a></li>
+                    <li class="menu-item"><a class="menu-a" href="">Наша команда</a></li>
+                    <li class="menu-item"><a class="menu-a" href="">Контакти</a></li>
+                </ul>
+            </nav>
+            <p id="userName" class="name"></p>
+        </div>
+    </header>
+
+
+    <main>
+        
+        <h1 class="main-tex">Популярні інетрактивні ігри</h1>
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+        <section class="calcYears">
+            <h2 class="calcYears-tex">Перевір, в який рік ти народився</h2>
+            <div class="inp-menu">
+                <input id="yearInput" placeholder="Введіть рік народження" class="calcYears-inp" type="text">
+                <button onclick="checkYear()" class="calcYears-sub" type="button">
+                    <img src="./img/icons/search.svg" alt="Перевірити">
+                </button>
+                <h4 id="leapYearResult" class="calcYears-resoult"><br></h4>
+            </div>
+        </section>
+
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+
+        <section class="randomaizer">
+            <h2 class="randomaizer-tex">Вгадай число, яке загадав комп’ютер</h2>
+            <div class="inp-menu">
+                <input id="random-inp" placeholder="Введіть число" class="randomaizer-inp" type="text">
+                <button onclick="randomaizer()" class="randomaizer-sub" type="submit">
+                    <object data="./img/icons/search.svg" type=""></object>
+                </button>
+                <h4 id="randomaizerResoult" class="randomaizer-resoult">Вітаю, ви вгадали число! (number) </h4>
+            </div>
+        </section>
+
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+
+        <section class="rps">
+            <h2 class="rps-tex">Камінь - ножиці - папір</h2>
+            <ul class="rps-chose">
+                <li class="rps-chose-item">
+                    <button onclick="ChoseUserRPS('Камінь')" class="rps-chose-item-but">
+                        <object data="./img/icons/rock.svg" type="">
+                            
+                        </object>
+                    </button>
+                </li>
+                <li class="rps-chose-item">
+                    <button onclick="ChoseUserRPS('Ножниці')" class="rps-chose-item-but">
+                        <object data="./img/icons/scissors.svg" type=""></object>
+                    </button>
+                </li>
+                <li class="rps-chose-item">
+                    <button onclick="ChoseUserRPS('Папір')" class="rps-chose-item-but">
+                        <object data="./img/icons/paper.svg" type=""></object>
+                    </button>
+                </li>
+            </ul>
+            <h4 id="resultRPS" class="rps-resoult">Ви виграли/програли раунд!</h4>
+
+        </section>
+
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+
+        <section class="calc">
+            <h2 class="calc-tex">Калькулятор</h2>
+            <ul class="calc-list">
+                <li class="calc-list-item">
+                    <input id="firstItem" placeholder="Введіть число" class="calc-enter" type="number">
+                </li>
+                <li>
+                    <ul class="chose-list">
+                        <li><button onclick="calc('+')" class="chose-list-but">+</button></li>
+                        <li><button onclick="calc('*')" class="chose-list-but">*</button></li>
+                        <li><button onclick="calc('-')" class="chose-list-but">-</button></li>
+                        <li><button onclick="calc('/')" class="chose-list-but">/</button></li>
+                    </ul>
+                </li>
+                <li class="calc-list-item">
+                    <input id="secondItem" placeholder="Введіть число" class="calc-enter" type="number">
+                </li>
+                <li class="calc-list-item">
+                    <button onclick="" class="chose-list-but">=</button>
+                </li>
+                <li class="calc-list-item">
+                    <input id="calcResult" placeholder="Результат" class="calc-enter" type="">
+                </li>
+            </ul>
+        </section>
+
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+
+        <section class="calc-time">
+            <h2 class="calc-time-tex">Калькулятор часу</h2>
+            <ul class="calc-time-list">
+                <li class="calc-time-item">
+                    <input id="calc_time" placeholder="Введіть число" class="calc-time-inp" type="">
+                    <button id="convert_btn" class="calc-time-sub" type="submit">
+                        <object class="search_img" data="./img/icons/search.svg" type=""></object>
+                    </button>
+                </li>
+                <li class="calc-time-item">
+                    <object width="150px" data="./img/icons/lineForCalc.svg" type=""></object>
+                </li>
+                <li class="calc-time-item calibration">
+                    <p id="resoult">resoult</p>
+                </li>
+            </ul>
+        </section>
+
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+
+        <section class="hightestNum">
+            <h2 class="hightestNum-tex">Введіть 3 числа</h2>
+            <ul class="hightestNum-list">
+                <li>
+                    <input class="hightestNum-inp" type="number">
+                </li>
+                <li>
+                    <input class="hightestNum-inp" type="number">
+                </li>
+                <li>
+                    <input class="hightestNum-inp" type="number">
+                </li>
+            </ul>
+            
+            <p class="hightestNum-text">Найбільше число, яке ви ввели - <span id="highNum">(число)</span></p>
+        </section>
+
+        <object class="line" data="./img/icons/line.svg" type=""></object>
+
+        <section class="creator">
+            <h2 class="creator-tex">Творець сайту</h2>
+            <img class="creator-img" src="./img/creator.jpg" alt="student">
+            <h2 class="creator-text">Куклишин Мирослав</h2>
+            <p class="creator-p">Інформація про роботу, яку він/вона виконав/ла</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <object data="./img/icons/logoForFooter.svg" type=""></object>
+            <ul class="contacr-list">
+                <li>
+                    <p>Тел: +38 (123) 456 78 90</p>
+                </li>
+                <li>
+                    <p>E-Mail: codingmagic@gmail.com</p>
+                </li>
+                <li>
+                    <p>Facebook: CodingMagic</p>
+                </li>
+                <li>
+                    <p>Twitter: CodingMagic</p>
+                </li>
+                <li>
+                    <p>Instagram: CodingMagic</p>
+                </li>
+            </ul>
+            <div>
+                <form action="">
+                    <input placeholder="Ваша ел. адреса..." class="sub-inp" type="email" value="">
+                    <button class="sub-but" type="submit">Підписатись</button>
+                </form>
+                <p>*Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
